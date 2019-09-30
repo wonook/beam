@@ -636,12 +636,12 @@ public class HadoopFormatIO {
         LOGGER.info("Not splitting source {} because source is already split.", this);
         return ImmutableList.of((BoundedSource<KV<K, V>>) this);
       }
-      static final String SPLIT_MAXSIZE =
+      final String splitMaxsize =
           "mapreduce.input.fileinputformat.split.maxsize";
-      static final String SPLIT_MINSIZE =
+      final String splitMinsize =
           "mapreduce.input.fileinputformat.split.minsize";
-      conf.get().setLong(SPLIT_MINSIZE, desiredBundleSizeBytes);
-      conf.get().setLong(SPLIT_MAXSIZE, desiredBundleSizeBytes);
+      conf.get().setLong(splitMinsize, desiredBundleSizeBytes);
+      conf.get().setLong(splitMaxsize, desiredBundleSizeBytes);
       computeSplitsIfNecessary();
       LOGGER.info(
           "Generated {} splits. Size of first split is {} ",
