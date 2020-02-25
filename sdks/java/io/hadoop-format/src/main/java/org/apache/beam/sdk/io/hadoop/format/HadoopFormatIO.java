@@ -642,8 +642,8 @@ public class HadoopFormatIO {
           "mapreduce.input.fileinputformat.split.minsize";
       conf.get().setLong(splitMinsize, desiredBundleSizeBytes);
       conf.get().setLong(splitMaxsize, desiredBundleSizeBytes);
-      LOGGER.info("{} set to {}", splitMinsize, conf.get().getLong(splitMinsize, 1L));
-      LOGGER.info("{} set to {}", splitMaxsize, conf.get().getLong(splitMaxsize, 1L));
+      LOG.info("{} set to {}", splitMinsize, conf.get().getLong(splitMinsize, 1L));
+      LOG.info("{} set to {}", splitMaxsize, conf.get().getLong(splitMaxsize, 1L));
       computeSplitsIfNecessary();
       LOG.info(
           "Generated {} splits. Size of first split is {} ",
@@ -684,7 +684,7 @@ public class HadoopFormatIO {
       }
       createInputFormatInstance();
       final Job j = Job.getInstance(conf.get());
-      LOGGER.info("job has min splitsize: {}",
+      LOG.info("job has min splitsize: {}",
           j.getConfiguration().getLong("mapreduce.input.fileinputformat.split.minsize", 1L));
       List<InputSplit> splits = inputFormatObj.getSplits(j);
       if (splits == null) {
