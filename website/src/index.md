@@ -21,6 +21,9 @@ logos:
 - title: Samza
   image_url: /images/logo_samza.png
   url: https://samza.apache.org/
+- title: Nemo
+  image_url: /images/logo_nemo.png
+  url: https://nemo.apache.org/
 
 pillars:
 - title: Unified

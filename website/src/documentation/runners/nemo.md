@@ -37,7 +37,7 @@ supported capabilities of the Nemo Runner.
 
 ## Nemo Runner prerequisites and setup
 
-The Nemo Runner can be used simply by adding a dependency on a version of the Nemo runner newer than `0.1`
+The Nemo Runner can be used simply by adding a dependency on a version of the Nemo runner newer than `0.2`
 to your pom.xml as follows:
 
 ```
